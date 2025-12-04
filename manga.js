@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!textoIngles) return "Sinopse indisponível.";
 
         try {
-            // A API gratuita tem limite de tamanho, então pegamos os primeiros 500 caracteres
-            // para garantir que a tradução funcione rápido.
+  
             const textoParaTraduzir = textoIngles.substring(0, 500);
             
             const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(textoParaTraduzir)}&langpair=en|pt`;
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(url);
             const data = await response.json();
             
-            // Se o texto original era maior que 500 caracteres, adicionamos "..."
             let textoTraduzido = data.responseData.translatedText;
             if (textoIngles.length > 500) {
                 textoTraduzido += "... (leia mais no site oficial)";
@@ -40,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error("Erro ao traduzir:", error);
-            // Se a tradução falhar (internet ou limite), mostra em inglês mesmo
             return textoIngles;
         }
     }
@@ -100,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const rawSynopsis = manga.synopsis ? manga.synopsis : "Sinopse indisponível.";
             const year = manga.published && manga.published.prop && manga.published.prop.from.year ? manga.published.prop.from.year : "?";
             
-            // 2. CHAMA A TRADUÇÃO (Isso pode levar +1 segundo)
-            // Enquanto traduz, mudamos o texto do spinner se quiser, ou só esperamos
+            // 2. CHAMA A TRADUÇÃO 
+     
             const translatedSynopsis = await traduzirTexto(rawSynopsis);
 
             let linkAction = manga.url;

@@ -68,7 +68,7 @@ main {
   padding: 2rem;
   padding-top: 6.25rem; 
   width: 100%;
-  flex: 1; /* Empurra o rodapé para baixo */
+  flex: 1;
   padding-bottom: 5rem; 
 }
 
@@ -138,7 +138,7 @@ h3 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 101;
-  right: 4.5rem; /* Posição Mobile (perto do burger) */
+  right: 4.5rem; 
   color: var(--header-text);
   transition: transform 0.2s, background 0.2s;
 }
@@ -289,7 +289,6 @@ h3 {
 /* =========================================
    6. BOTÃO GERAR E RESULTADOS (ANIME E MANGÁ)
    ========================================= */
-/* AQUI ESTÁ A MUDANÇA: Adicionei #manga-button e #manga-container */
 
 #anime-button,
 #manga-button { 
@@ -346,21 +345,20 @@ h3 {
 }
 
 /* --- ESTILO DO NOVO CARD DE MANGÁ --- */
-/* Isso é necessário para o layout do card bonito que fizemos */
 .manga-card {
-    background: var(--card-bg); /* Usa a cor do tema */
+    background: var(--card-bg);
     color: var(--text-color);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    text-align: left; /* Alinha texto do card à esquerda */
+    text-align: left;
     margin: 0 auto;
 }
 
 .manga-card .img-container {
-    height: 350px; /* Altura fixa para imagem */
+    height: 350px; 
     width: 100%;
     overflow: hidden;
     position: relative;
